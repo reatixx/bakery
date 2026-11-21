@@ -1,0 +1,11 @@
+@use "../global/variables" as *;
+
+.stars-svg {
+  width: 85px;
+  height: 17px;
+  background-color: $brown-primary;
+  mask-image: url('/assets/images/icon/star.svg');
+  mask-repeat: repeat-x;
+  background-size: 17px 17px;
+  mask-size: 17px 17px;
+}

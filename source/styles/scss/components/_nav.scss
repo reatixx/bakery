@@ -1,0 +1,139 @@
+@use "../global/variables" as *;
+@use "../global/mixin" as *;
+@use "../global/viewports" as *;
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 11px 0;
+  align-items: center;
+  background-color: $white;
+  position: relative;
+  z-index: 10;
+}
+
+.nav__wrapper-one,
+.nav__list {
+  display: flex;
+  align-items: center;
+}
+
+.nav__wrapper-one {
+  width: 46rem;
+  gap: 1rem;
+  position: relative;
+}
+
+.nav__wrapper-two {
+  width: 0;
+  display: block;
+  position: relative;
+
+  @media (min-width: $tablet) {
+    width: 30rem;
+  }
+}
+
+.nav__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 150%;
+  gap: 8px;
+
+  &--user {
+    display: none;
+
+    @media (min-width: $desktop) {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+}
+
+.nav__list {
+  display: none;
+
+  @media (min-width: $tablet) {
+    display: flex;
+    gap: 24px;
+    justify-content: flex-end;
+  }
+}
+
+.nav__text {
+  &--user {
+    font-size: 1rem;
+  }
+}
+
+.nav__icon-btn {
+  display: none;
+  cursor: pointer;
+
+  @media (min-width: $tablet) {
+    display: flex;
+    background-color: $brown-primary;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: none;
+    color: $white;
+    align-items: center;
+  }
+
+  @media (min-width: $desktop) {
+    justify-content: space-between;
+    width: 10rem;
+  }
+
+  &:hover {
+    background-color: $brown-secondary;
+  }
+}
+
+.nav__icon-btn span {
+  display: none;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 150%;
+  text-align: center;
+  font-family: $rubik;
+
+  @media (min-width: $desktop) {
+    padding-left: 2rem;
+    display: block;
+  }
+}
+
+.nav__wrapper-basket {
+  position: relative;
+}
+
+.nav__counter {
+  position: absolute;
+  bottom: 42px;
+  right: 3px;
+  background-color: $brown-primary;
+  color: $white;
+  font-size: 0.60rem;
+  font-weight: 500;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: $rubik;
+
+  &--favorite {
+    right: 12px;
+  }
+}
+
+.nav__icon-svg {
+  color: $white;
+}

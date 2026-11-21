@@ -1,0 +1,65 @@
+@use "../global/variables" as *;
+@use "../global/mixin" as *;
+@use "../global/viewports" as *;
+
+.map__image img {
+  width: 100%;
+  height: 100%;
+}
+
+.map__btn {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 150%;
+  cursor: pointer;
+  border: none;
+  padding: 8px 8px;
+  border-radius: 4px;
+  font-family: $rubik;
+  background-color: $button-bg;
+  color: $black;
+  width: 8.75rem;
+  transition: color 0.4s ease, background-color 0.4s ease;
+
+  &:hover {
+    color: $white;
+    background-color: $brown-primary;
+  }
+
+  &--active {
+    color: $white;
+    background-color: $brown-primary;
+  }
+}
+
+.map__buttons {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  @media (min-width: $tablet) {
+    justify-content: flex-start;
+  }
+}
+
+.map__title {
+  font-weight: 700;
+  font-size: 1.7rem;
+  line-height: 150%;
+  margin: 0;
+  margin-bottom: 2.5rem;
+
+  @media (min-width: $tablet) {
+    font-size: 2.25rem;
+  }
+}
+
+.map__interactive-map {
+  width: 100%;
+  height: 400px;
+  border-radius: 8px;
+}

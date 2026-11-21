@@ -4,9 +4,716 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Тёплый Хлеб</title>
-  <script type="module" crossorigin src="./js/main.js"></script>
+  <meta name="description" content="Онлайн магазин пекарни Тёплый Хлеб">
+  <link rel="icon" href="assets/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="./assets/favicon/site.webmanifest">
+  <link rel="preload" href="./fonts/Rubik-Regular.woff2" as="font" type="font/woff2" crossorigin>
 </head>
 <body>
-  
+  <header class="header">
+    <div class="container">
+      <nav class="nav">
+        <div class="nav__wrapper-one">
+          <a class="logo" href="#">
+            <svg class="logo__svg" width="40" height="35">
+              <use href="./assets/images/icon/sprite.svg#logo"></use>
+            </svg>
+            <span class="logo__text">
+              Тёплый Хлеб
+            </span>
+          </a>
+
+          <button class="catalog-btn button" type="button" aria-label="catalog button">
+            <svg class="catalog-btn__svg catalog-btn__svg--open" width="24" height="24">
+              <use href="./assets/images/icon/sprite.svg#burger"></use>
+            </svg>
+
+            <svg class="catalog-btn__svg catalog-btn__svg--close" width="24" height="24">
+              <use href="./assets/images/icon/sprite.svg#burger-close"></use>
+            </svg>
+            <span class="catalog-btn__text">Каталог</span>
+          </button>
+
+          <form class="search" action="#" method="get"> 
+            <button type="submit" class="search__btn" aria-label="Поиск">
+              <svg class="search__icon" width="20" height="20">
+                <use href="./assets/images/icon/sprite.svg#search"></use>
+              </svg>
+            </button>
+            <input type="text" class="search__input" placeholder="Найти товар">
+          </form>
+          <div class="search-results"></div>
+        </div>
+
+        <div class="nav__wrapper-two">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a class="nav__link" href="#">
+                <svg class="nav__svg" width="24" height="24">
+                  <use href="./assets/images/icon/sprite.svg#heart"></use>
+                </svg>
+                <div class="nav__wrapper-basket">
+                  <span class="nav__text">Избранное</span>
+                  <span class="nav__counter nav__counter--favorite">0</span>
+                </div>
+              </a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="productCard.html">
+                <svg class="nav__svg" width="24" height="24">
+                  <use href="./assets/images/icon/sprite.svg#box"></use>
+                </svg>
+                <span class="nav__text">Заказы</span>
+              </a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="#">
+                <svg class="nav__svg" width="24" height="24">
+                  <use href="./assets/images/icon/sprite.svg#orders"></use>
+                </svg>
+                <div class="nav__wrapper-basket">
+                  <span class="nav__text">Корзина</span>
+                  <span class="nav__counter">0</span>
+                </div>
+              </a>
+            </li>
+            <li class="nav__item">
+              <button class="nav__icon-btn" data-modal-show="login" type="button">
+                <span>Войти</span>
+                <svg class="nav__icon-svg" width="24" height="24">
+                  <use href="./assets/images/icon/sprite.svg#log-in"></use>
+                </svg>
+              </button>
+            </li>
+          </ul>
+          <ul class="nav-mobile">
+            <li class="nav-mobile__item">
+              <a class="nav-mobile__link" href="catalog.html">
+                <span class="nav-mobile__text">Каталог</span>
+              </a>
+            </li>
+            <li class="nav-mobile__item">
+              <a class="nav-mobile__link" href="#">
+                <span class="nav-mobile__text">Избранное</span>
+              </a>
+            </li>
+            <li class="nav-mobile__item">
+              <a class="nav-mobile__link" href="#">
+                <span class="nav-mobile__text">Заказы</span>
+              </a>
+            </li>
+            <li class="nav-mobile__item">
+              <a class="nav-mobile__link" href="#">
+                <span class="nav-mobile__text">Корзина</span>
+              </a>
+            </li>
+            <li class="nav-mobile__item">
+              <button class="nav-mobile__link" data-modal-show="login">
+                <span class="nav-mobile__text">Авторизация</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div class="banner">
+      <h2 class="banner__title">Вся выпечка со скидкой 20%<br>после 20:00</h2>
+    </div>
+  </header>
+  <main class="main">
+    <div class="container">
+      <section class="card">
+        <div class="card__wrapper">
+          <h2 class="card__title">Акции</h2>
+          <button class="card__text">
+            <span class="card__subtitle">Все акции</span>
+            <svg class="card__svg" width="24" height="24">
+              <use href="./assets/images/icon/sprite.svg#arrow"></use>
+            </svg>
+          </button>
+        </div>
+        <ul class="card__list">
+          <li class="card__item">
+            <div class="product-card">
+              <a class="product-card__link" href="productCard.html?id=11">
+                <div class="product-card__image">
+                  <picture>
+                    <source type="image/webp" srcset="./assets/images/img/main/promo/medovik.webp 1x">
+                    <source type="image/jpeg" srcset="./assets/images/img/main/promo/medovik.png 1x">
+                    <img loading="lazy" decoding="async" src="./assets/images/img/main/promo/medovik.png" alt="Медовик" width="272" height="160">
+                  </picture>
+                  <span class="product-card__discount">-6%</span>
+                </div>
+
+                <div class="product-card__info">
+                  <div class="product-card__price">
+                    <div class="product-card__price-right">
+                      <span class="product-card__price-new">131 ₽</span>
+                      <span class="product-card__price-label">Со скидкой</span>
+                    </div>
+                    <div class="product-card__price-left">
+                      <span class="product-card__price-old">140 ₽</span>
+                      <span class="product-card__price-label">Обычная</span>
+                    </div>
+                  </div>
+
+                  <h3 class="product-card__title">Пирожное "Медовик"</h3>
+
+                  <div class="stars-svg"></div>
+                </div>
+              </a>
+
+              <button class="product-card__favorite" aria-label="Добавить в избранное">
+                <svg class="product-card__favorite-svg" width="24" height="24">
+                  <use href="./assets/images/icon/sprite.svg#heart"></use>
+                </svg>
+              </button>
+
+              <button class="product-card__btn">В корзину</button>
+            </div>
+          </li>
+
+          <li class="card__item">
+            <div class="product-card">
+              <a class="product-card__link" href="productCard.html?id=57">
+                <div class="product-card__image">
+                  <picture>
+                    <source type="image/webp" srcset="./assets/images/img/main/promo/bread.webp 1x">
+                    <source type="image/jpeg" srcset="./assets/images/img/main/promo/bread.png 1x">
+                    <img loading="lazy" decoding="async" src="./assets/images/img/main/promo/bread.png" alt="Хлеб рустик" width="272" height="160">
+                  </picture>
+                  <span class="product-card__discount">-13%</span>
+                </div>
+
+                <div class="product-card__info">
+                  <div class="product-card__price">
+                    <div class="product-card__price-right">
+                      <span class="product-card__price-new">48 ₽</span>
+                      <span class="product-card__price-label">Со скидкой</span>
+                    </div>
+                    <div class="product-card__price-left">
+                      <span class="product-card__price-old">55 ₽</span>
+                      <span class="product-card__price-label">Обычная</span>
+                    </div>
+                  </div>
+
+                  <h3 class="product-card__title">Хлеб "Рустик"</h3>
+
+                  <div class="stars-svg"></div>
+                </div>
+              </a>
+
+              <button class="product-card__favorite" aria-label="Добавить в избранное">
+                <svg class="product-card__favorite-svg" width="24" height="24">
+                  <use href="./assets/images/icon/sprite.svg#heart"></use>
+                </svg>
+              </button>
+
+              <button class="product-card__btn">В корзину</button>
+            </div>
+          </li>
+
+          <li class="card__item">
+            <div class="product-card">
+              <a class="product-card__link" href="productCard.html?id=15">
+                <div class="product-card__image">
+                  <picture>
+                    <source type="image/webp" srcset="./assets/images/img/main/promo/pie.webp 1x">
+                    <source type="image/jpeg" srcset="./assets/images/img/main/promo/pie.png 1x">
+                    <img loading="lazy" decoding="async" src="./assets/images/img/main/promo/pie.png" alt="Пай творожный" width="272" height="160">
+                  </picture>
+                  <span class="product-card__discount">-7%</span>
+                </div>
+
+                <div class="product-card__info">
+                  <div class="product-card__price">
+                    <div class="product-card__price-right">
+                      <span class="product-card__price-new">148 ₽</span>
+                      <span class="product-card__price-label">Со скидкой</span>
+                    </div>
+                    <div class="product-card__price-left">
+                      <span class="product-card__price-old">159 ₽</span>
+                      <span class="product-card__price-label">Обычная</span>
+                    </div>
+                  </div>
+
+                  <h3 class="product-card__title">Пай творожный с малиной</h3>
+
+                  <div class="stars-svg"></div>
+                </div>
+              </a>
+
+              <button class="product-card__favorite" aria-label="Добавить в избранное">
+                <svg class="product-card__favorite-svg" width="24" height="24">
+                  <use href="./assets/images/icon/sprite.svg#heart"></use>
+                </svg>
+              </button>
+
+              <button class="product-card__btn">В корзину</button>
+            </div>
+          </li>
+
+          <li class="card__item card__item--hidden">
+            <div class="product-card">
+              <a class="product-card__link" href="productCard.html?id=17">
+                <div class="product-card__image">
+                  <picture>
+                    <source type="image/webp" srcset="./assets/images/img/main/promo/donut.webp 1x">
+                    <source type="image/jpeg" srcset="./assets/images/img/main/promo/donut.png 1x">
+                    <img loading="lazy" decoding="async" src="./assets/images/img/main/promo/donut.png" alt="Донатс" width="272" height="160">
+                  </picture>
+                  <span class="product-card__discount">-11%</span>
+                </div>
+
+                <div class="product-card__info">
+                  <div class="product-card__price">
+                    <div class="product-card__price-right">
+                      <span class="product-card__price-new">48 ₽</span>
+                      <span class="product-card__price-label">Со скидкой</span>
+                    </div>
+                    <div class="product-card__price-left">
+                      <span class="product-card__price-old">54 ₽</span>
+                      <span class="product-card__price-label">Обычная</span>
+                    </div>
+                  </div>
+
+                  <h3 class="product-card__title">Донатс</h3>
+
+                  <div class="stars-svg"></div>
+                </div>
+              </a>
+
+              <button class="product-card__favorite" aria-label="Добавить в избранное">
+                <svg class="product-card__favorite-svg" width="24" height="24">
+                  <use href="./assets/images/icon/sprite.svg#heart"></use>
+                </svg>
+              </button>
+
+              <button class="product-card__btn">В корзину</button>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <div class="card__wrapper">
+          <h2 class="card__title">Новинки</h2>
+          <button class="card__text">
+            <span class="card__subtitle">Все новинки</span>
+            <svg class="card__svg" width="24" height="24">
+              <use href="./assets/images/icon/sprite.svg#arrow"></use>
+            </svg>
+          </button>
+        </div>
+        <ul class="card__list">
+          <li class="card__item">
+            <div class="product-card">
+              <a class="product-card__link" href="productCard.html?id=21">
+                <div class="product-card__image">
+                  <picture>
+                    <source type="image/webp" srcset="./assets/images/img/main/new/choco-cake.webp 1x">
+                    <source type="image/jpeg" srcset="./assets/images/img/main/new/choco-cake.png 1x">
+                    <img loading="lazy" decoding="async" src="./assets/images/img/main/new/choco-cake.png" alt="Торт Шоколадный" width="272" height="160">
+                  </picture>
+                  <span class="product-card__discount">NEW</span>
+                </div>
+
+                <div class="product-card__info">
+                  <div class="product-card__price">
+                    <div class="product-card__price-right">
+                      <span class="product-card__price-new">599 ₽</span>
+                    </div>
+                  </div>
+
+                  <h3 class="product-card__title">Торт Шоколадный с кремом чиз и клубникой</h3>
+
+                  <div class="stars-svg"></div>
+                </div>
+              </a>
+
+              <button class="product-card__favorite" aria-label="Добавить в избранное">
+                <svg class="product-card__favorite-svg" width="24" height="24">
+                  <use href="./assets/images/icon/sprite.svg#heart"></use>
+                </svg>
+              </button>
+
+              <button class="product-card__btn">В корзину</button>
+            </div>
+          </li>
+
+          <li class="card__item">
+            <div class="product-card">
+              <a class="product-card__link" href="productCard.html?id=22">
+                <div class="product-card__image">
+                  <picture>
+                    <source type="image/webp" srcset="./assets/images/img/main/new/berry-cake.webp 1x">
+                    <source type="image/jpeg" srcset="./assets/images/img/main/new/berry-cake.png 1x">
+                    <img loading="lazy" decoding="async" src="./assets/images/img/main/new/berry-cake.png" alt="Торт Ягодный" width="272" height="160">
+                  </picture>
+                  <span class="product-card__discount">NEW</span>
+                </div>
+
+                <div class="product-card__info">
+                  <div class="product-card__price">
+                    <div class="product-card__price-right">
+                      <span class="product-card__price-new">659 ₽</span>
+                    </div>
+                  </div>
+
+                  <h3 class="product-card__title">Торт Ягодный с йогуртовой начинкой</h3>
+
+                  <div class="stars-svg"></div>
+                </div>
+              </a>
+
+              <button class="product-card__favorite" aria-label="Добавить в избранное">
+                <svg class="product-card__favorite-svg" width="24" height="24">
+                  <use href="./assets/images/icon/sprite.svg#heart"></use>
+                </svg>
+              </button>
+
+              <button class="product-card__btn">В корзину</button>
+            </div>
+          </li>
+
+          <li class="card__item">
+            <div class="product-card">
+              <a class="product-card__link" href="productCard.html?id=18">
+                <div class="product-card__image">
+                  <picture>
+                    <source type="image/webp" srcset="./assets/images/img/main/new/raspberry-muffin.webp 1x">
+                    <source type="image/jpeg" srcset="./assets/images/img/main/new/raspberry-muffin.png 1x">
+                    <img loading="lazy" decoding="async" src="./assets/images/img/main/new/raspberry-muffin.png" alt="Пай творожный" width="272" height="160">
+                  </picture>
+                  <span class="product-card__discount">NEW</span>
+                </div>
+
+                <div class="product-card__info">
+                  <div class="product-card__price">
+                    <div class="product-card__price-right">
+                      <span class="product-card__price-new">74 ₽</span>
+                    </div>
+                  </div>
+
+                  <h3 class="product-card__title">Маффин творожный с малиной</h3>
+
+                  <div class="stars-svg"></div>
+                </div>
+              </a>
+
+              <button class="product-card__favorite" aria-label="Добавить в избранное">
+                <svg class="product-card__favorite-svg" width="24" height="24">
+                  <use href="./assets/images/icon/sprite.svg#heart"></use>
+                </svg>
+              </button>
+
+              <button class="product-card__btn">В корзину</button>
+            </div>
+          </li>
+
+          <li class="card__item card__item--hidden">
+            <div class="product-card">
+              <a class="product-card__link" href="productCard.html?id=41">
+                <div class="product-card__image">
+                  <picture>
+                    <source type="image/webp" srcset="./assets/images/img/main/new/sandwich.webp 1x">
+                    <source type="image/jpeg" srcset="./assets/images/img/main/new/sandwich.png 1x">
+                    <img loading="lazy" decoding="async" src="./assets/images/img/main/new/sandwich.png" alt="Сэндвич" width="272" height="160">
+                  </picture>
+                  <span class="product-card__discount">NEW</span>
+                </div>
+
+                <div class="product-card__info">
+                  <div class="product-card__price">
+                    <div class="product-card__price-right">
+                      <span class="product-card__price-new">180 ₽</span>
+                    </div>
+                  </div>
+
+                  <h3 class="product-card__title">Сэндвич с бужениной</h3>
+
+                  <div class="stars-svg"></div>
+                </div>
+              </a>
+
+              <button class="product-card__favorite" aria-label="Добавить в избранное">
+                <svg class="product-card__favorite-svg" width="24" height="24">
+                  <use href="./assets/images/icon/sprite.svg#heart"></use>
+                </svg>
+              </button>
+
+              <button class="product-card__btn">В корзину</button>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <div class="card__wrapper">
+          <h2 class="card__title">Покупали раньше</h2>
+          <button class="card__text">
+            <span class="card__subtitle">Все покупки</span>
+            <svg class="card__svg" width="24" height="24">
+              <use href="./assets/images/icon/sprite.svg#arrow"></use>
+            </svg>
+          </button>
+        </div>
+        <ul class="card__list">
+          <li class="card__item">
+            <div class="product-card">
+              <a class="product-card__link" href="productCard.html?id=32">
+                <div class="product-card__image">
+                  <picture>
+                    <source type="image/webp" srcset="./assets/images/img/main/purchased/sirniki.webp 1x">
+                    <source type="image/jpeg" srcset="./assets/images/img/main/purchased/sirniki.png 1x">
+                    <img loading="lazy" decoding="async" src="./assets/images/img/main/purchased/sirniki.png" alt="Сырники" width="272" height="160">
+                  </picture>
+                </div>
+
+                <div class="product-card__info">
+                  <div class="product-card__price">
+                    <div class="product-card__price-right">
+                      <span class="product-card__price-new">358 ₽</span>
+                    </div>
+                  </div>
+
+                  <h3 class="product-card__title">Сырники 5 штук с начинкой на выбор</h3>
+
+                  <div class="stars-svg"></div>
+                </div>
+              </a>
+
+              <button class="product-card__favorite" aria-label="Добавить в избранное">
+                <svg class="product-card__favorite-svg" width="24" height="24">
+                  <use href="./assets/images/icon/sprite.svg#heart"></use>
+                </svg>
+              </button>
+
+              <button class="product-card__btn">В корзину</button>
+            </div>
+          </li>
+
+          <li class="card__item">
+            <div class="product-card">
+              <a class="product-card__link" href="productCard.html?id=13">
+                <div class="product-card__image">
+                  <picture>
+                    <source type="image/webp" srcset="./assets/images/img/main/purchased/tiramisu.png 1x">
+                    <source type="image/jpeg" srcset="./assets/images/img/main/purchased/tiramisu.png 1x">
+                    <img loading="lazy" decoding="async" src="./assets/images/img/main/purchased/tiramisu.png" alt="Тирамису" width="272" height="160">
+                  </picture>
+                </div>
+
+                <div class="product-card__info">
+                  <div class="product-card__price">
+                    <div class="product-card__price-right">
+                      <span class="product-card__price-new">159 ₽</span>
+                    </div>
+                  </div>
+
+                  <h3 class="product-card__title">Пирожное "Тирамису"</h3>
+
+                  <div class="stars-svg"></div>
+                </div>
+              </a>
+
+              <button class="product-card__favorite" aria-label="Добавить в избранное">
+                <svg class="product-card__favorite-svg" width="24" height="24">
+                  <use href="./assets/images/icon/sprite.svg#heart"></use>
+                </svg>
+              </button>
+
+              <button class="product-card__btn">В корзину</button>
+            </div>
+          </li>
+
+          <li class="card__item">
+            <div class="product-card">
+              <a class="product-card__link" href="productCard.html?id=31">
+                <div class="product-card__image">
+                  <picture>
+                    <source type="image/webp" srcset="./assets/images/img/main/purchased/blini.png 1x">
+                    <source type="image/jpeg" srcset="./assets/images/img/main/purchased/blini.png 1x">
+                    <img loading="lazy" decoding="async" src="./assets/images/img/main/purchased/blini.png" alt="Блины" width="272" height="160">
+                  </picture>
+                </div>
+
+                <div class="product-card__info">
+                  <div class="product-card__price">
+                    <div class="product-card__price-right">
+                      <span class="product-card__price-new">289 ₽</span>
+                    </div>
+                  </div>
+
+                  <h3 class="product-card__title">Блины с вишневой начинкой 3 штуки</h3>
+
+                  <div class="stars-svg"></div>
+                </div>
+              </a>
+
+              <button class="product-card__favorite" aria-label="Добавить в избранное">
+                <svg class="product-card__favorite-svg" width="24" height="24">
+                  <use href="./assets/images/icon/sprite.svg#heart"></use>
+                </svg>
+              </button>
+
+              <button class="product-card__btn">В корзину</button>
+            </div>
+          </li>
+
+          <li class="card__item card__item--hidden">
+            <div class="product-card">
+              <a class="product-card__link" href="productCard.html?id=4">
+                <div class="product-card__image">
+                  <picture>
+                    <source type="image/webp" srcset="./assets/images/img/main/purchased/pirozhok.png 1x">
+                    <source type="image/jpeg" srcset="./assets/images/img/main/purchased/pirozhok.png 1x">
+                    <img loading="lazy" decoding="async" src="./assets/images/img/main/purchased/pirozhok.png" alt="Сосиска в тесте" width="272" height="160">
+                  </picture>
+                </div>
+
+                <div class="product-card__info">
+                  <div class="product-card__price">
+                    <div class="product-card__price-right">
+                      <span class="product-card__price-new">68 ₽</span>
+                    </div>
+                  </div>
+
+                  <h3 class="product-card__title">Сосиска в тесте</h3>
+
+                  <div class="stars-svg"></div>
+                </div>
+              </a>
+
+              <button class="product-card__favorite" aria-label="Добавить в избранное">
+                <svg class="product-card__favorite-svg" width="24" height="24">
+                  <use href="./assets/images/icon/sprite.svg#heart"></use>
+                </svg>
+              </button>
+
+              <button class="product-card__btn">В корзину</button>
+            </div>
+          </li>
+        </ul>
+      </section>
+      <section class="special-offers">
+        <h2 class="special-offers__title">Специальные предложения</h2>
+        <ul class="special-offers__list">
+          <li class="special-offers__item special-offers__item--rose">
+            <div class="special-offers__wrapper">
+              <h3 class="special-offers__subtitle">+100 бонусов при регистрации</h3>
+              <p class="special-offers__text">Копите и оплачивайте вкусные покупки своими бонусами!</p>
+              <span class="special-offers__tag">1 бонус = 1 рубль скидки</span>
+            </div>
+            <div class="special-offers__wrapper">
+              <picture>
+                <source type="image/webp" srcset="./assets/images/img/main/offers/offer-1.webp 1x">
+                <source type="image/jpeg" srcset="./assets/images/img/main/offers/offer-1.png 1x">
+                <img loading="lazy" decoding="async" class="special-offers__image special-offers__image--rose" src="./assets/images/img/main/offers/offer-1.png" alt="discount in the mobile version of the app" width="195" height="185">
+              </picture>
+            </div>
+          </li>
+          <li class="special-offers__item special-offers__item--green">
+            <div class="special-offers__wrapper">
+              <h3 class="special-offers__subtitle">Кофе + десерт</h3>
+              <p class="special-offers__text">Ароматный капучино и пирожное дня — всего за 350 ₽. Отличное утро начинается здесь!</p>
+            </div>
+            <div class="special-offers__wrapper">
+              <picture>
+                <source type="image/webp" srcset="./assets/images/img/main/offers/offer-2.webp 1x">
+                <source type="image/jpeg" srcset="./assets/images/img/main/offers/offer-2.png 1x">
+                <img loading="lazy" decoding="async" class="special-offers__image special-offers__image--green" src="./assets/images/img/main/offers/offer-2.png" alt="coffee and cake cardtion" width="223" height="169">
+              </picture>
+            </div>
+          </li>
+        </ul>
+      </section>
+      <section class="map">
+        <h2 class="map__title">Наши магазины</h2>
+        <div class="map__wrapper">
+          <div class="map__buttons">
+            <button class="map__btn map__btn--active" type="button">г.Петрозаводск</button>
+            <button class="map__btn" type="button">г.Олонец</button>
+            <button class="map__btn" type="button">г.Сортавала</button>
+            <button class="map__btn" type="button">г.Пудож</button>
+          </div>
+          <div class="map__interactive-map" id="map"></div>
+        </div>
+      </section>
+      <section class="conditions">
+        <h2 class="conditions__title">Приятные условия для любимых клиентов</h2>
+        <ul class="conditions__list">
+          <li class="conditions__item conditions__item--first">
+            <h3 class="conditions__subtitle">Тёплый подарок ко дню рождения — скидка 10%</h3>
+          </li>
+          <li class="conditions__item conditions__item--second">
+            <h3 class="conditions__subtitle">Вкусное рядом: доставка всего 350 ₽ или бесплатно от 1500 ₽</h3>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__wrapper">
+        <a class="logo" href="#">
+          <svg class="logo__svg" width="40" height="35">
+            <use href="./assets/images/icon/sprite.svg#logo"></use>
+          </svg>
+          <span class="logo__text">
+            Тёплый Хлеб
+          </span>
+        </a>
+        <nav class="footer__nav">
+          <ul class="footer-site">
+            <li>
+              <a class="footer-site__link" href="#visiting">О компании</a>
+            </li>
+            <li>
+              <a class="footer-site__link" href="#explore">Контакты</a>
+            </li>
+            <li>
+              <a class="footer-site__link" href="#video">Вакансии</a>
+            </li>
+            <li>
+              <a class="footer-site__link" href="#gallery">Статьи</a>
+            </li>
+            <li>
+              <a class="footer-site__link" href="#tickets">Политика обработки персональных данных</a>
+            </li>
+          </ul>
+          <ul class="social">
+            <li>
+              <a class="social__link" href="#">
+                <span class="visually-hidden">instagram link</span>
+                <svg class="social__svg" width="24" height="24">
+                  <use href="./assets/images/icon/sprite.svg#instagram"></use>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a class="social__link" href="#">
+                <span class="visually-hidden">vkontakte link</span>
+                <svg class="social__svg" width="24" height="24">
+                  <use href="./assets/images/icon/sprite.svg#vkontakte"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <div class="contacts__info">
+          <a class="contacts__link" href="tel:+88005557575">
+            <svg class="social__svg" width="24" height="24">
+              <use href="./assets/images/icon/sprite.svg#phone"></use>
+            </svg>
+            <span class="contacts__text">8 800 555 75 75</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script type="module" crossorigin src="./js/main.js"></script>
 </body>
 </html>

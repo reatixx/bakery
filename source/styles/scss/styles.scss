@@ -1,0 +1,47 @@
+//global
+@use "./global/fonts" as *;
+@use "./global/variables" as *;
+@use "./global/viewports" as *;
+@use "./global/visually-hidden" as *;
+@use "./global/button";
+@use "./global/basic" as *;
+@use "./global/mixin" as *;
+@use "./global/container";
+@use "./global/title";
+//components
+@use "./components/nav";
+@use "./components/nav-mobile";
+@use "./components/catalog-btn";
+@use "./components/search";
+@use "./components/search-result";
+@use "./components/logo";
+@use "./components/banner";
+@use "./components/product-card";
+@use "./components/main";
+@use "./components/card";
+@use "./components/special-offers";
+@use "./components/map";
+@use "./components/conditions";
+@use "./components/footer";
+@use "./components/social";
+@use "./components/contacts";
+@use "./components/footer-site";
+@use "./components/stars-svg";
+//catalog
+@use "./components/catalog";
+//popup
+@use "./components/auth-modal";
+//filter
+@use "./components/filter";
+@use "./components/filter-form";
+@use "./components/pagination";
+//card
+@use "./components/page-card";
+@use "./components/goods";
+@use "./components/table-nutrition";
+@use "./components/card-aside";
+@use "./components/reviews";
+@use "./components/user-review";
+@use "./components/rating";
+@use "./components/form-comment";
+@use "./components/rating-stars";

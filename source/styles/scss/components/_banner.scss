@@ -1,0 +1,39 @@
+@use "../global/variables" as *;
+@use "../global/mixin" as *;
+@use "../global/viewports" as *;
+
+.banner {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: $bg;
+  background-size: cover;
+  width: 100%;
+  padding-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: $black;
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 150%;
+  font-size: 1.38rem;
+  min-height: 12.5rem;
+  background-image: url("/assets/images/img/main/banner/bg-mobile.jpg");
+
+  @media (min-width: $tablet) {
+    min-height: 12.5rem;
+    font-size: 2rem;
+    background-image: url("/assets/images/img/main/banner/bg-tablet.jpg");
+  }
+
+  @media (min-width: $desktop) {
+    min-height: 12.5rem;
+    background-image: url("/assets/images/img/main/banner/bg.jpg");
+  }
+}
+
+.banner__title {
+  margin-top: 1rem;
+}
